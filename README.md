@@ -27,6 +27,13 @@ It supports a minimal subset of RV32I instructions (addi, add, sw, beq) and can 
 
 ---
 
+## How to Run
+iverilog -o cpu_sim src/*.v tb/top_tb.v
+vvp cpu_sim
+gtkwave cpu_wave.vcd
+
+---
+
 ## Example Program
 The included `program.hex` runs:
 ```assembly
@@ -35,10 +42,3 @@ addi x2, x0, 10   # x2 = 10
 add  x3, x1, x2   # x3 = 15
 sw   x3, 0(x0)    # MEM[0] = 15
 beq  x0, x0, -4   # infinite loop
-
----
-
-## How to Run
-iverilog -o cpu_sim src/*.v tb/top_tb.v
-vvp cpu_sim
-gtkwave cpu_wave.vcd
