@@ -28,9 +28,9 @@ It supports a minimal subset of RV32I instructions (addi, add, sw, beq) and can 
 ---
 
 ## How to Run
-iverilog -o cpu_sim src/*.v tb/top_tb.v
-vvp cpu_sim
-gtkwave cpu_wave.vcd
+- iverilog -o cpu_sim src/*.v tb/top_tb.v
+- vvp cpu_sim
+- gtkwave cpu_wave.vcd
 
 ---
 
